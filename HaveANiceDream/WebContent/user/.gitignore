@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Dashboard">
+<meta name="keyword"
+	content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+<title>DASHGUM - Bootstrap Admin Template</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/HaveANiceDream/Theme/assets/css/bootstrap.css"
+	rel="stylesheet">
+<!--external css-->
+<link
+	href="/HaveANiceDream/Theme/assets/font-awesome/css/font-awesome.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/HaveANiceDream/Theme/assets/css/style.css" rel="stylesheet">
+<link href="/HaveANiceDream/Theme/assets/css/style-responsive.css"
+	rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+<script type="text/javascript">
+	function setPath(url) {
+
+		location.href = "/HaveANiceDream/view.html?url=" + url;
+	}
+</script>
+</head>
+
+<body>
+
+	<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	<div id="login-page">
+		<div class="container">
+
+			<form class="form-login" action="/HaveANiceDream/user/login.do"
+				method="post">
+				<input type="hidden" id="logtype" name="logtype" value="기본">
+				<h2 class="form-login-heading">sign in now</h2>
+				<div class="login-wrap">
+					<input type="text" class="form-control" placeholder="User ID"
+						name="id" id="id" required autofocus> <br> <input
+						type="password" class="form-control" placeholder="Password"
+						name="pass" id="pass" required> <label class="checkbox">
+						<span class="pull-right"> <a data-toggle="modal"
+							href="login.html#myModal"> Forgot Password?</a>
+
+					</span>
+					</label>
+					<button class="btn btn-theme btn-block" type="submit" id="signin">
+						<i class="fa fa-lock"></i> SIGN IN
+					</button>
+					<hr>
+
+					<div class="login-social-link centered">
+						<p>or you can sign in via your social network</p>
+						<p>
+							<a id="kakao-login-btn" href="javascript:kakaologin()"> <img
+								alt=""
+								src="/HaveANiceDream/Theme/assets/img/user/kakao_account_login_btn_medium_narrow_ov.png">
+							</a>
+						</p>
+						<div id="naverIdLogin"></div>
+						<p>
+						<div class="fb-login-button" scope="public_profile,email"
+							data-max-rows="1" data-size="large" data-button-type="login_with"
+							data-show-faces="false" data-auto-logout-link="false"
+							data-use-continue-as="false" onlogin="fbLogin();"></div>
+						</p>
+
+					</div>
+					<div class="registration">
+						Don't have an account yet?<br /> <a class=""
+							href="javascript:setPath('../user/sign_in_page.jsp')"> Create
+							an account </a>
+					</div>
+
+				</div>
+
+				<!-- Modal -->
+				<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog"
+					tabindex="-1" id="myModal" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Forgot Password ?</h4>
+							</div>
+							<div class="modal-body">
+								<p>Enter your e-mail address below to reset your password.</p>
+								<input type="text" name="email" placeholder="Email"
+									autocomplete="off" class="form-control placeholder-no-fix">
+
+							</div>
+							<div class="modal-footer">
+								<button data-dismiss="modal" class="btn btn-default"
+									type="button">Cancel</button>
+								<button class="btn btn-theme" type="button">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- modal -->
+				<!-- 카카오 로그인을 위한 숨겨진 input -->
+				<input type="hidden" id="kakaoNnaverid" name="kakaoNnaverid">
+				<input type="hidden" id="kakaoNnaveremail" name="kakaoNnaveremail">
+				<input type="hidden" id="kakaoNnaverimg" name="kakaoNnaverimg">
+				<input type="hidden" id="kakaoNnavername" name="kakaoNnavername">
+			</form>
+
+		</div>
+	</div>
+
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="/HaveANiceDream/Theme/assets/js/jquery.js"></script>
+	<script src="/HaveANiceDream/Theme/assets/js/bootstrap.min.js"></script>
+
+	<!--BACKSTRETCH-->
+	<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+	<script type="text/javascript"
+		src="/HaveANiceDream/Theme/assets/js/jquery.backstretch.min.js"></script>
+	<script>
+		$.backstretch("/HaveANiceDream/Theme/assets/img/login-bg.jpg", {
+			speed : 500
+		});
+	</script>
+	<!-- 카카오 연동 -->
+	<!-- 카카오 SDK -->
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type='text/javascript'>
+		//<![CDATA[
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		Kakao.init('78cecbcfa10a98bcb341599df55a3441');
+		// 카카오 로그인 버튼을 생성합니다.
+
+		function kakaologin() {
+
+			Kakao.Auth.loginForm({
+				success : function(authObj) {
+					//alert(JSON.stringify(authObj));
+					Kakao.API.request({
+						url : '/v1/user/me',
+						success : function(res) {
+							//alert(JSON.stringify(res));
+							$("#kakaoNnaverid").val(res.id);
+							$("#kakaoNnaveremail").val(res.kaccount_email);
+							$("#kakaoNnaverimg").val(
+									res.properties.thumbnail_image);
+							$("#kakaoNnavername").val(res.properties.nickname);
+							$("#logtype").val("Kakao");
+							$("#id").removeAttr("required");
+							$("#pass").removeAttr("required");
+							$("#signin").trigger("click");
+						},
+						fail : function(error) {
+							alert(JSON.stringify(error));
+						}
+					});
+				},
+				fail : function(err) {
+					alert(JSON.stringify(err));
+				},
+				persistAccessToken : false
+			});
+		}
+		//]]>
+	</script>
+	<!-- 네이버 연동 코드 -->
+	<!-- 네이버SDK -->
+	<script type="text/javascript"
+		src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+		charset="utf-8"></script>
+	<!-- 네이버아디디로로그인 초기화 Script -->
+	<script type="text/javascript">
+		var naverLogin = new naver.LoginWithNaverId(
+				{
+					clientId : "JaM3SgETDGwc6FCEo9Mw",
+					callbackUrl : "http://localhost:8088/HaveANiceDream/user/naver_callback.html",
+					isPopup : false, /* 팝업을 통한 연동처리 여부 */
+					loginButton : {
+						color : "green",
+						type : 3,
+						height : 49
+					}
+				/* 로그인 버튼의 타입을 지정 */
+				});
+		naverLogin.init();
+	</script>
+	<!-- 페이스북 연동 코드 -->
+	<div id="fb-root"></div>
+	<script>
+		function fbLogin() {
+			// 로그인 여부 체크
+			FB.getLoginStatus(function(response) {
+
+				if (response.status === 'connected') {
+					FB.api('/me', function(res) {
+						// 제일 마지막에 실행
+						console.log("Success Login : " + response.name);
+						// alert("Success Login : " + response.name);
+					});
+				} else if (response.status === 'not_authorized') {
+					// 사람은 Facebook에 로그인했지만 앱에는 로그인하지 않았습니다.
+					alert('앱에 로그인해야 이용가능한 기능입니다.');
+				} else {
+					// 그 사람은 Facebook에 로그인하지 않았으므로이 앱에 로그인했는지 여부는 확실하지 않습니다.
+					alert('페이스북에 로그인해야 이용가능한 기능입니다.');
+				}
+			}, true); // 중복실행방지
+		}
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12&appId=2119289184970452&autoLogAppEvents=1';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+</body>
+</html>

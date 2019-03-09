@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Dashboard">
+<meta name="keyword"
+	content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+<title>DASHGUM - Bootstrap Admin Template</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/HaveANiceDream/Theme/assets/css/bootstrap.css"
+	rel="stylesheet">
+<!--external css-->
+<link
+	href="/HaveANiceDream/Theme/assets/font-awesome/css/font-awesome.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/HaveANiceDream/Theme/assets/css/style.css" rel="stylesheet">
+<link href="/HaveANiceDream/Theme/assets/css/style-responsive.css"
+	rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+<script type="text/javascript">
+	function setPath(url) {
+
+		location.href = "/HaveANiceDream/view.html?url=" + url;
+	}
+</script>
+</head>
+
+<body>
+
+	<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	<div id="login-page">
+		<div class="container">
+			<div class="form-login">
+				<h2 class="form-login-heading">sign in now</h2>
+				<div class="login-wrap">
+					<form action="/HaveANiceDream/user/login.do" method="post">
+						<input type="hidden" id="logtype" name="logtype" value="기본">
+						<input type="text" class="form-control" placeholder="User ID"
+							name="id" id="id" required autofocus>
+						<br>
+						<input type="password" class="form-control" placeholder="Password"
+							name="pass" id="pass" required>
+						<br>
+						<button class="btn btn-theme btn-block" type="submit" id="signin">
+							<i class="fa fa-lock"></i>
+							SIGN IN
+						</button>
+
+						<!-- 카카오 로그인을 위한 숨겨진 input -->
+						<input type="hidden" id="SNSid" name="SNSid">
+						<input type="hidden" id="SNSemail" name="SNSemail">
+						<input type="hidden" id="SNSimg" name="SNSimg">
+						<input type="hidden" id="SNSname" name="SNSname">
+					</form>
+					<label class="checkbox">
+						<span class="pull-right">
+							<a href="javascript:showpassform()">비밀번호 찾기</a>
+						</span>
+						<span class="pull-left">
+							<a href="javascript:showidform()">ID 찾기</a>
+						</span>
+					</label>
+					<hr>
+					<div id="findiddiv" style="display: none;">
+						<input type="text" class="form-control"
+							placeholder="가입시 사용한 메일주소를 입력해주세요" id="findidmail" required
+							autofocus>
+						<br>
+						<button class="btn btn-theme btn-block" type="button" id="findid">
+							ID 찾기</button>
+						<br>
+					</div>
+					<div id="findpassdiv" style="display: none;">
+						<form action="/HaveANiceDream/user/findpass.do" method="post">
+							<input type="text" class="form-control" placeholder="User ID"
+								id="findpassid" required autofocus>
+							<br>
+							<input type="text" class="form-control"
+								placeholder="가입시 사용한 메일주소를 입력해주세요" id="findpassmail" required>
+							<br>
+							<button class="btn btn-theme btn-block" type="button"
+								id="findpass">비밀번호 찾기</button>
+							<br>
+						</form>
+					</div>
+					<div class="login-social-link centered" id="social-link-div">
+						<p>
+							<a id="kakao-login-btn" href="javascript:kakaologin()">
+								<img alt=""
+									src="/HaveANiceDream/Theme/assets/img/user/kakao_account_login_btn_medium_narrow_ov.png">
+							</a>
+						</p>
+						<div id="naverIdLogin"></div>
+						<p>
+							<!-- 페이스북 -->
+						<div class="fb-login-button" scope="public_profile,email"
+							data-max-rows="1" data-size="large" data-button-type="login_with"
+							data-show-faces="false" data-auto-logout-link="false"
+							data-use-continue-as="false" onlogin="fbLogin();"></div>
+						</p>
+						<!-- 페이스북 종료 -->
+					</div>
+					<div class="registration">
+						아직 계정이 없으신가요?
+						<br />
+						<a class="" href="javascript:setPath('../user/sign_in_page.jsp')">
+							가입하기 </a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="/HaveANiceDream/Theme/assets/js/jquery.js"></script>
+	<script src="/HaveANiceDream/Theme/assets/js/bootstrap.min.js"></script>
+
+	<!--BACKSTRETCH-->
+	<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+	<script type="text/javascript"
+		src="/HaveANiceDream/Theme/assets/js/jquery.backstretch.min.js"></script>
+	<script>
+		$.backstretch("/HaveANiceDream/Theme/assets/img/login-bg.jpg", {
+			speed : 500
+		});
+	</script>
+	<!-- 카카오 연동 -->
+	<!-- 카카오 SDK -->
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type='text/javascript'>
+		function showpassform() {
+			$("#findpassdiv").css("display", "block");
+			$("#social-link-div").css("display", "none");
+			$("#findiddiv").css("display", "none");
+		};
+
+		function showidform() {
+			$("#findpassdiv").css("display", "none");
+			$("#social-link-div").css("display", "none");
+			$("#findiddiv").css("display", "block");
+		};
+		$("#findid").on("click", function() {
+			$.ajax({
+				url : "/HaveANiceDream/user/findid.do",
+				type : "post",
+				data : {
+					"mail" : document.getElementById("findidmail").value
+				},
+				dataType : "text",
+				success : function(resp) {
+					alert(resp);
+
+				}
+			});
+
+		});
+
+		$("#findpass").on("click", function() {
+			$.ajax({
+				url : "/HaveANiceDream/user/findpass.do",
+				type : "post",
+				data : {
+					"mail" : document.getElementById("findpassmail").value,
+					"userid" : document.getElementById("findpassid").value
+				},
+				dataType : "text",
+				success : function(resp) {
+					alert(resp);
+
+				}
+			});
+
+		});
+		//<![CDATA[
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		Kakao.init('78cecbcfa10a98bcb341599df55a3441');
+		// 카카오 로그인 버튼을 생성합니다.
+
+		function kakaologin() {
+
+			Kakao.Auth.loginForm({
+				success : function(authObj) {
+					//alert(JSON.stringify(authObj));
+					Kakao.API.request({
+						url : '/v1/user/me',
+						success : function(res) {
+							//alert(JSON.stringify(res));
+							$("#SNSid").val(res.id);
+							$("#SNSemail").val(res.kaccount_email);
+							$("#SNSimg").val(res.properties.thumbnail_image);
+							$("#SNSname").val(res.properties.nickname);
+							$("#logtype").val("Kakao");
+							$("#id").removeAttr("required");
+							$("#pass").removeAttr("required");
+							$("#signin").trigger("click");
+						},
+						fail : function(error) {
+							alert(JSON.stringify(error));
+						}
+					});
+				},
+				fail : function(err) {
+					alert(JSON.stringify(err));
+				},
+				persistAccessToken : false
+			});
+		}
+		//]]>
+	</script>
+	<!-- 네이버 연동 코드 -->
+	<!-- 네이버SDK -->
+	<script type="text/javascript"
+		src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+		charset="utf-8"></script>
+	<!-- 네이버아디디로로그인 초기화 Script -->
+	<script type="text/javascript">
+		var naverLogin = new naver.LoginWithNaverId(
+				{
+					clientId : "JaM3SgETDGwc6FCEo9Mw",
+					callbackUrl : "http://localhost:8088/HaveANiceDream/user/naver_callback.html",
+					isPopup : false, /* 팝업을 통한 연동처리 여부 */
+					loginButton : {
+						color : "green",
+						type : 3,
+						height : 49
+					}
+				/* 로그인 버튼의 타입을 지정 */
+				});
+		naverLogin.init();
+	</script>
+	<!-- 페이스북 연동 코드 -->
+	<div id="fb-root"></div>
+	<script>
+		function fbLogin() {
+			// 로그인 여부 체크
+			FB.getLoginStatus(function(response) {
+
+				if (response.status === 'connected') {
+					FB.api('/me', {
+						fields : 'email,name,picture'
+					}, function(response) {
+						// 제일 마지막에 실행 // me가 벌써 토근생성해서  내정보 받아옴acess 엑세스토근을 받아옴..
+						$("#SNSid").val(response.id);
+						$("#SNSname").val(response.name);
+						$("#SNSemail").val(response.email);
+						$("#SNSimg").val(response.picture.data.url);
+						//picture.data.url
+						$("#logtype").val("Facebook");
+						$("#id").removeAttr("required");
+						$("#pass").removeAttr("required");
+						$("#signin").trigger("click");
+					});
+				} else if (response.status === 'not_authorized') {
+					// 사람은 Facebook에 로그인했지만 앱에는 로그인하지 않았습니다.
+					alert('앱에 로그인해야 이용가능한 기능입니다.');
+				} else {
+					// 그 사람은 Facebook에 로그인하지 않았으므로이 앱에 로그인했는지 여부는 확실하지 않습니다.
+					alert('페이스북에 로그인해야 이용가능한 기능입니다.');
+				}
+			}, true); // 중복실행방지
+		}
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12&appId=2119289184970452&autoLogAppEvents=1';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+</body>
+</html>

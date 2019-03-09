@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+<title>International Blockchain Evaluation Forum</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="shortcut icon" href="resource/favicon.ico">
+<script>
+//submitcheck
+/* var delay = 1000;
+var submitted = false;
+function submitcheck(){
+	if(submitted == true) { return; }
+
+	  document.frm.button.value='전송중';
+	  document.frm.button.disabled = true;
+	  setTimeout ('submitForm()', delay);
+
+	  submitted = true;
+}
+function submitForm(){
+	  document.frm.submit();
+	} */
+</script>
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+	font: 400 15px 'Noto Sans KR', sans-serif;
+	line-height: 1.8;
+	color: #818181;
+}
+
+h2 {
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #303030;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	color: #303030;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+.jumbotron {
+	/*background-color: #0070C0;*/
+	background: url(resource/main.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: scroll;
+	color: #000;
+	padding: 150px 0px;
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0px;
+}
+
+.bg {
+	padding: 10px 25px;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.container-fluid {
+	padding: 60px 50px;
+}
+
+.bg-grey {
+	background-color: #f6f6f6;
+}
+
+.logo-small {
+	color: #0070C0;
+	font-size: 50px;
+}
+
+.logo {
+	color: #0070C0;
+	font-size: 200px;
+}
+
+.thumbnail {
+	border: none;
+	border-radius: 0;
+}
+
+.thumbnail img {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-control.right, .carousel-control.left {
+	background-image: none;
+	color: #0070C0;
+}
+
+.carousel-indicators li {
+	border-color: #0070C0;
+}
+
+.carousel-indicators li.active {
+	background-color: #0070C0;
+}
+
+.item h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	font-weight: 400;
+	font-style: italic;
+	margin: 70px 0;
+}
+
+.item span {
+	font-style: normal;
+}
+
+.panel {
+	border: 1px solid #0070C0;
+	border-radius: 0 !important;
+	transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+	box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+}
+
+.panel-footer .btn:hover {
+	border: 1px solid #0070C0;
+	background-color: #fff !important;
+	color: #0070C0;
+}
+
+.panel-heading {
+	color: #fff !important;
+	background-color: #0070C0 !important;
+	padding: 25px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+	background-color: white !important;
+}
+
+.panel-footer h3 {
+	font-size: 32px;
+}
+
+.panel-footer h4 {
+	color: #aaa;
+	font-size: 14px;
+}
+
+.panel-footer .btn {
+	margin: 15px 0;
+	background-color: #0070C0;
+	color: #fff;
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #0070C0;
+	z-index: 9999;
+	border: 0;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #0070C0 !important;
+	background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
+}
+
+footer .glyphicon {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #0070C0;
+}
+
+.slideanim {
+	visibility: hidden;
+}
+
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+
+div.col-md-6>.form-control {
+	margin-top: 10px;
+}
+
+div.bg>img {
+	width: 25%;
+	height: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@
+keyframes slide { 0% {
+	opacity: 0;
+	transform: translateY(70%);
+}
+
+100%
+{
+opacity
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+1;
+transform
+
+
+
+
+
+
+
+
+:translateY
+
+
+
+
+
+
+
+
+(0%);
+}
+}
+@
+-webkit-keyframes slide { 0% {
+	opacity: 0;
+	-webkit-transform: translateY(70%);
+}
+
+100%
+{
+opacity
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+1;
+-webkit-transform
+
+
+
+
+
+
+
+
+:translateY
+
+
+
+
+ 
+
+
+
+
+(0%);
+}
+}
+#junemeetup {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.col-sm-4 {
+		text-align: center;
+		margin: 25px 0;
+	}
+	.btn-lg {
+		width: 100%;
+		margin-bottom: 35px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.logo {
+		font-size: 150px;
+	}
+	div.bg>img {
+		width: 90%;
+	}
+	#junemeetup {
+		display: block;
+	}
+}
+
+@media ( max-width : 991px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	}
+	.navbar-collapse.collapse {
+		display: none !important;
+	}
+	.navbar-nav {
+		float: none !important;
+		margin: 7.5px -15px;
+	}
+	.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.navbar-text {
+		float: none;
+		margin: 15px 0;
+	}
+	/* since 3.1.0 */
+	.navbar-collapse.collapse.in {
+		display: block !important;
+	}
+	.collapsing {
+		overflow: hidden !important;
+	}
+	div.form-group>div.col-md-6.text-right, div.form-group>div.col-md-6.text-right>label
+		{
+		text-align: left;
+	}
+}
+</style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#myPage"><!-- 여기부분 -->
+					<img alt="" src="resource/logo_sm1.png" style="height: 40px; width: auto; margin: 5px" class="navbar-left">
+				</a>
+				<a class="navbar-brand" href="#myPage">IBEForum</a>
+				<a class="navbar-brand" href="/event.do" id="junemeetup">June-EVENT</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#about">ABOUT</a>
+					</li>
+					<li>
+						<a href="#organization">ORGANIZATION</a>
+					</li>
+					<li>
+						<a href="#portfolio">PRESS</a>
+					</li>
+					<li>
+						<a href="/event.do">June-EVENT</a>
+					</li>
+					<li>
+						<a href="#register">REGISTRATION</a>
+					</li>
+					<li>
+						<a href="#contact">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron text-center">
+		<div class="bg"> <!-- 여기부분 -->
+			<img alt="" src="resource/logo1.png" class="img-responsive center-block">
+		</div>
+	</div>
+
+	<!-- Container (About Section) -->
+	<div id="about" class="container-fluid">
+		<h2>About</h2>
+		<br>
+		<p>The International Blockchain Evaluation Forum (IBEForum) has officially launched and participants include Blockchain experts from all walks
+			of life and around the world.</p>
+		<p>The IBEForum, which will be officially launched in June, will be made up of Blockchain experts from various countries.</p>
+		<p>Namely, Professor Park Su-yong of Sogang University, a Blockchain expert in Korea, Dr. Cho Byung-Wan Hanyang University, recognized as the
+			best in the world in the field of industrial revolution, and Dr. Jochen Biedermann of Germany and other experts from Asia, Europe, and North
+			America have already been agreed to participate in this program.</p>
+		<p>The IBEForum will also present policies regarding the directions for each country to adapt and adjust to the forthcoming Industrial
+			Revolution and the changes that the Blockchain will bring, as well as addressing the standards and alternatives to decrease risks and scams that
+			exist in the current cryptocurrency market.</p>
+		<p>There is a reason why the whole world is paying attention to the Blockchain system. However, despite its advantages, the world is also
+			witnessing the negative aspects as well. With the fourth industrial revolution, IBEForum will maximize the positive impact of the Blockchain.</p>
+		<p>We will try to minimize the side effects in the current market, full of uncertainties and scams by creating a set of standards and
+			guidelines.</p>
+		<p>When the IBEForum and Jury Online's evaluation system work hand in hand, the synergy effect will be maximized."</p>
+		<p>The International Blockchain Verification Evaluation Forum will be officially launched in June.</p>
+	</div>
+	<div class="container-fluid bg-grey">
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<span class="glyphicon glyphicon-globe logo slideanim"></span>
+			</div>
+			<div class="col-sm-8">
+				<h2>Our Goal</h2>
+				<br>
+				<p>We will maximize the positive impact of the Blockchain, and try to minimize the side effects in the current market, full of uncertainties
+					and scams by creating a set of standards and guidelines.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Container (Services Section) -->
+	<div id="organization" class="container-fluid text-center ">
+		<h2>Organization</h2>
+		<br>
+		<div class="row text-center slideanim">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="thumbnail">
+					<img src="resource/organization1.png" alt="Organization" width="400" height="300">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Container (Portfolio Section) -->
+	<div id="portfolio" class="container-fluid text-center bg-grey">
+		<h2>press</h2>
+		<br>
+		<h4>5/24 Event</h4>
+		<div class="row text-center slideanim">
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="resource/1.jpg" alt="" width="400" height="300">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="resource/2.jpg" alt="" width="400" height="300">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="resource/3.jpg" alt="" width="400" height="300">
+				</div>
+			</div>
+		</div>
+		<br>
+		<h4>Article</h4>
+		<p>
+			<a href="http://www.dailycoinews.com/news/view.php?idx=342">‘국제 블록체인 검증평가 포럼(IBEForum)’ 공식 발족</a>
+		</p>
+		<p>
+			<a href="http://www.dailycoinews.com/news/view.php?idx=340">The Official Launch of "International Blockchain Verification Evaluation Forum
+				(IBEForum)"</a>
+		</p>
+	</div>
+	<!--start meet-up------>
+	<div id="meet-up" class="container-fluid "><!-- /Register.do -->
+		<form class="form-horizontal col-sm-offset-1 col-sm-10 slideanim" id="frm"  name="frm" action="/Meetup.do" method="post" onsubmit="alert('Transmitting. Please wait.');">
+		<h2 class="text-center">6/27 Meet-up Application </h2>
+		<br>
+			<div class="row ">
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " >Duration of Meeting</label>
+					</div>
+					<div class="col-sm-10">
+						<label class="control-label " for="duration">6월 27일(수) 오후 7시</label>
+						<input type="hidden" class="form-control" id="duration" name="duration" value="6월 27일(수) 오후 7시">
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label ">Meeting Location</label>
+					</div>
+					<div class="col-sm-10">
+						<label class="control-label " >한양대 재성토목관 103호</label>
+						<input type="hidden" class="form-control" id="loc" name="loc" value="한양대 제성토목관 103호">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " >Available Capacity</label>
+					</div>
+					<div class="col-sm-10">
+						<label class="control-label " >선착순 100명</label>
+						<input type="hidden" class="form-control" id="recruitment" name="recruitment">
+					</div>
+				</div>
+			</div>
+			<br>
+			<p class="text-center">Applicant Information</p>
+			<br>
+			<div class="row ">
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="name1">Name</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="name1" name="name1" placeholder="이름" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="tel1">Contact Number</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="tel" class="form-control" id="tel1" name="tel1" name="" placeholder="연락처">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="email1">E-mail</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="email1" name="email1" placeholder="전자우편" required="required">
+					</div>
+				</div>
+			</div>
+		 
+			<div class="form-group">
+				<input type="submit" class="btn btn-default pull-right" value="Send" >
+			</div> 
+		</form>
+	</div>
+	<!--start portfolio------>
+	<div id="register" class="container-fluid bg-grey">
+		<h2 class="text-center">REGISTRATION</h2>
+		<br>
+		<p class="text-center">Anyone who is interested in the Blockchain can apply for the expert / public.</p>
+		<p class="text-center">누구나 블록체인에 관심이 많으신 전문가 / 일반인은 신청 가능합니다.</p>
+		<br>
+		<form class="form-horizontal col-sm-offset-1 col-sm-10 slideanim" action="/Register.do" method="post" enctype="multipart/form-data"
+		 onsubmit="alert('Transmitting. Please wait.');">
+			<div class="row ">
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="type">Type</label>
+					</div>
+					<div class="col-sm-10">						
+						<label class="radio-inline">
+							<input type="radio" name="type" value="public" checked="checked">
+							Public / 일반인
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="type" value="expert" >
+							Expert / 전문가
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="name">Name</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="name" name="name" placeholder="이름" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="tel">Contact Number</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="tel" class="form-control" id="tel" name="tel" placeholder="연락처">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="email">E-mail</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="email" name="email" placeholder="전자우편" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="addr">Residential Area</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="addr" name="addr" placeholder="거주지역">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2">
+						<label class="control-label " for="recommend">Recommendation</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="recommend" name="recommend" placeholder="추천인 이메일">
+					</div>
+				</div>
+				<hr>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="investment">1. Are you currently participating in a cryptocurrency investment</label>
+						<p>1. 귀하는 현재 암호화폐 투자에 참여 하고 계십니까?</p>
+					</div>
+					<div class="col-md-6">
+						<label class="radio-inline">
+							<input type="radio" name="investment" value="Yes" checked="checked">
+							Yes
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="investment" value="No">
+							No
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="trading">2. Do you have any experience in trading cryptocurrency?</label>
+						<p>2. 암호화폐 거래소에서 Trading 경험 이 있으신가요?</p>
+					</div>
+
+					<div class="radio col-md-6">
+						<label class="radio-inline">
+							<input type="radio" name="trading" value="Yes" checked="checked">
+							Yes
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="trading" value="No">
+							No
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="sales">3. Do you have any experience in participating in ICO?</label>
+						<p>3. ICO sales에 참여 경험이 있나요?</p>
+					</div>
+
+					<div class="radio col-md-6">
+						<label class="radio-inline">
+							<input type="radio" name="sales" value="Yes" checked="checked">
+							Yes
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="sales" value="No">
+							No
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="kind">4. How many ICOs are you currently involved in?</label>
+						<p>4. 현재 ICO는 몇 가지 종류에 참여하 셨나요?</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="text" class="form-control" id="kind" name="kind">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="count">5. Currently, how many ICOs (that have already listed in the market) have you successfully
+							invested in?</label>
+						<p>5. 투자성공(상장완료) ICO 개수는?</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="text" class="form-control" id="count" name="count">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="regulation">6. What do you think about the current government’s ICO regulations?</label>
+						<p>6. 현 정부의 ICO 규제에 대해 어떻게 생각하시나요?</p>
+					</div>
+					<div class=" col-md-6">
+						<textarea class="form-control" rows="3" id="regulation" name="regulation"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="problem">7. What do you think is the current problem of ICO?</label>
+						<p>7. 현재 ICO의 문제점은 무엇이라 생각하시나요?</p>
+					</div>
+					<div class=" col-md-6">
+						<textarea class="form-control" rows="3" id="problem" name="problem"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="comment">8. Please tell us your opinion about ICO verification and evaluation.</label>
+						<p>8. ICO 검증 및 평가에 대한 귀하의 의견을 말씀해주세요.</p>
+					</div>
+					<div class=" col-md-6">
+						<textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="wish">9. Do you have any suggestions or hopes for the International Blockchain Assessment Forum? If
+							so, please tell us. </label>
+						<p>9. 국제 블록체인 평가포럼에 바라는 점을 말씀해 주세요</p>
+					</div>
+					<div class=" col-md-6">
+						<textarea class="form-control" rows="3" id="wish" name="wish"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="etc">10. Resume</label>
+						<p>10. 자기소개</p>
+					</div>
+					<div class=" col-md-6">
+						<textarea class="form-control" rows="5" id="etc" name="etc"></textarea>
+					</div>
+				</div>
+				<div class="form-group exo">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="input_file1">11. Expert Only</label>
+						<p>11. 전문가 파일제출</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="file" id="input_file1" class="upload-hidden" name="boardImg1" required="required">
+					</div>
+				</div>
+				<div class="form-group exo">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="input_file2">12. Expert Only</label>
+						<p>12. 전문가 파일제출</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="file" id="input_file2" class="upload-hidden" name="boardImg2" >
+					</div>
+				</div>
+				<div class="form-group exo">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="input_file3">13. Expert Only</label>
+						<p>13. 전문가 파일제출</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="file" id="input_file3" class="upload-hidden" name="boardImg3" >
+					</div>
+				</div>
+				<div class="form-group exo">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="input_file4">14. Expert Only</label>
+						<p>14. 전문가 파일제출</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="file" id="input_file4" class="upload-hidden" name="boardImg4" >
+					</div>
+				</div>
+				<div class="form-group exo">
+					<div class="col-md-6 text-right">
+						<label class="control-label " for="input_file5">15. Expert Only</label>
+						<p>14. 전문가 파일제출</p>
+					</div>
+					<div class=" col-md-6">
+						<input type="file" id="input_file5" class="upload-hidden" name="boardImg5" >
+					</div>
+				</div>
+			
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-default pull-right" value="Send">
+			</div>
+		</form>
+
+	</div>
+
+
+	<!-- Container (Contact Section) -->
+	<div id="contact" class="container-fluid ">
+		<h2 class="text-center">CONTACT</h2>
+		<div class="row">
+			<div class="col-sm-5">
+				<p>
+					<i class="fab fa-telegram-plane"></i>
+					@ibeforum
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-phone"></span>
+					+82 1057980538
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-envelope"></span>
+					lyk@ibeforum.org
+				</p>
+				<hr>
+				<p>
+					<span class="glyphicon glyphicon-phone"></span>
+					+82 7088380538
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-envelope"></span>
+					info@ibeforum.org
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-map-marker"></span>
+					381, Gangnam-daero, Seocho-gu, Seoul, South KOREA
+				</p>
+
+			</div>
+			<!-- 메일 발송 부분 -->
+			<div class="col-sm-7 slideanim">
+				<form action="/Send.do" method="post" onsubmit="alert('Transmitting. Please wait.');">
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+						</div>
+						<div class="col-sm-6 form-group">
+							<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+						</div>
+					</div>
+					<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="10"></textarea>
+					<br>
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<input type="submit"  class="btn btn-default pull-right"  value="Send">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Add Google Maps -->
+	<div id="googleMap" style="height: 400px; width: 100%;"></div>
+	<script>
+		function myMap() {
+			var myCenter = new google.maps.LatLng(37.496726, 127.027847);
+			var mapProp = {
+				center : myCenter,
+				zoom : 17,
+				scrollwheel : false,
+				draggable : false,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("googleMap"),
+					mapProp);
+			var marker = new google.maps.Marker({
+				position : myCenter
+			});
+			marker.setMap(map);
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1WWb5ubQugqLwVfI68V6cfcWfzadjRk8&callback=myMap"></script>
+	<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+	<footer class="container-fluid text-center">
+		<a href="#myPage" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a>
+		<p>
+			Bootstrap Theme Made By
+			<a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a>
+		</p>
+	</footer>
+
+	<script>
+		$(document).ready(
+				function() {
+					// Add smooth scrolling to all links in navbar + footer link
+					$(".navbar a, footer a[href='#myPage']").on('click',
+							function(event) {
+								// Make sure this.hash has a value before overriding default behavior
+								if (this.hash !== "") {
+									// Prevent default anchor click behavior
+									event.preventDefault();
+
+									// Store hash
+									var hash = this.hash;
+
+									// Using jQuery's animate() method to add smooth page scroll
+									// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+									$('html, body').animate({
+										scrollTop : $(hash).offset().top
+									}, 900, function() {
+
+										// Add hash (#) to URL when done scrolling (default click behavior)
+										window.location.hash = hash;
+									});
+								} // End if
+							});
+
+					$(window).scroll(function() {
+						$(".slideanim").each(function() {
+							var pos = $(this).offset().top;
+
+							var winTop = $(window).scrollTop();
+							if (pos < winTop + 600) {
+								$(this).addClass("slide");
+							}
+						});
+					});
+				})
+	</script>
+
+</body>
+</html>
